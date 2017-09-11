@@ -29,11 +29,11 @@ configurations.all {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        /*这里网上很多资料都没说明*/
-        mReactInstanceManager.onActivityResult(this,requestCode,resultCode,data);
+        //这网上很多资料没介绍
+        mReactInstanceManager.onActivityResult(this,requestCode,resultCode,data);
     }
     ```
-    2. Activity调用RN中的界面，页面跳转参考[react-navigator](https://reactnavigation.org/docs/guides/linking),主要是在ReactNative使用的Activity的<intent-filter>中添加上对应的scheme、host属性；并在react-navigator的StackNavigator注册页面；
+    2. Activity调用RN中的界面，页面跳转参考[react-navigator](https://reactnavigation.org/docs/guides/linking),主要是在ReactNative使用的Activity的<intent-filter>中添加上对应的scheme、host属性；并在react-navigator的StackNavigator注册页面；
 
 
 具体的实现参考[demo](https://github.com/Shelomi/RNIntegration)
