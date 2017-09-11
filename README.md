@@ -24,7 +24,16 @@ configurations.all {
 2. ReactNative和原生互相调用
     1. RN唤起原生的Activity，参考[Android原生模块](https://facebook.github.io/react-native/docs/native-modules-android.html)创建一个插件；
         在插件添加一个`public void startActivityForResult(String className, ReadableMap params, Callback resultCallback)`的方法，调用context.startActivityForResult启动目标Activity；
-    2. Activity调用RN中的界面，页面跳转参考[react-navigator](https://reactnavigation.org/docs/guides/linking),主要是在ReactNative使用的Activity的<intent-filter>中添加上对应的scheme、host属性；并在react-navigator的StackNavigator注册页面；
+    这里需要注意重新ReactNative的onActivityResult方法：
+    ```
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //这里网上很多资料都没说明
+        mReactInstanceManager.onActivityResult(this,requestCode,resultCode,data);
+    }
+    ```
+    2. Activity调用RN中的界面，页面跳转参考[react-navigator](https://reactnavigation.org/docs/guides/linking),主要是在ReactNative使用的Activity的<intent-filter>中添加上对应的scheme、host属性；并在react-navigator的StackNavigator注册页面；
 
 
 具体的实现参考[demo](https://github.com/Shelomi/RNIntegration)
