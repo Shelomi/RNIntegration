@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.simon.rntestandroid.NativeActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试原生打开RN界面，并传值"/>
+
+    <Button
+
+        android:id="@+id/openChatComponent"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开RN的chat聊天页面，并传递字符串'Taylor'"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试原生打开RN界面，并获取返回值"/>
+
+    <Button
+        android:id="@+id/openChatComponentAndGetresult"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开RN的chat聊天页面,并获取返回值"/>
+
+    <TextView
+        android:id="@+id/getResultFromRN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="从RN获取的返回值："/>
+
+   <View
+       android:id="@+id/lineView"
+       android:layout_width="match_parent"
+       android:layout_height="2dp"
+       android:layout_marginTop="10dp"
+       android:layout_marginBottom="10dp"
+       android:background="@color/colorPrimaryDark"
+       tools:layout_editor_absoluteX="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="---------------------------分割线---------------------------"
+        style="?attr/colorAccent"/>
+
+    <TextView
+        android:id="@+id/textFromRN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="显示从RN获取的值"
+        style="?attr/colorAccent"/>
+
+    <Button
+        android:id="@+id/finishToRN"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="结束该Activity，返回到RN界面，传递返回值"/>
+
+</LinearLayout>
