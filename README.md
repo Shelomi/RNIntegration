@@ -29,7 +29,7 @@ configurations.all {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        //这里网上很多资料都没说明
+        /*这里网上很多资料都没说明*/
         mReactInstanceManager.onActivityResult(this,requestCode,resultCode,data);
     }
     ```
